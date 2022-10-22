@@ -41,3 +41,27 @@ export const GOOD_TO_BUY_HEADERS = {
   'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36',
   'X-Requested-With': 'XMLHttpRequest'
 }
+
+
+export const BUY_DIGITAL_HOST = 'https://momoyu.cc/api/hot/list?type=0'
+
+export const BUY_DIGITAL_HEADERS = {
+  // ':authority': 'momoyu.cc',
+  // ':method': 'GET',
+  // ':path': '/api/hot/list?type=0',
+  // ':scheme': 'https',
+  'accept': '*/*',
+  'accept-encoding': 'gzip, deflate, br',
+  'accept-language': 'zh-CN,zh;q=0.9',
+  'cache-control': 'no-cache',
+  'cookie': 'connect.sid=s%3ABcrsEZ7l2wXk0B94d0ojZ9Eq5PJyECyW.zdPFAkUxY4xX8dceqVz6EZdAj5MlTqqpG5CL9Y4IsVE; Hm_lvt_b962bca679d1c121d780bffc64fa42a1=1665922820,1666011736,1666355755,1666429805; Hm_lpvt_b962bca679d1c121d780bffc64fa42a1=1666429805',
+  'pragma': 'no-cache',
+  'referer': 'https://momoyu.cc/',
+  'sec-ch-ua': '"Chromium";v="106", "Google Chrome";v="106", "Not;A=Brand";v="99"',
+  'sec-ch-ua-mobile': '?0',
+  'sec-ch-ua-platform': '"Windows"',
+  'sec-fetch-dest': 'empty',
+  'sec-fetch-mode': 'cors',
+  'sec-fetch-site': 'same-origin',
+  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+}

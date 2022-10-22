@@ -1,6 +1,6 @@
 import { Code, IResponse } from '@/interface/response.interface'
 import axios from 'axios'
-import { GOOD_TO_BUY_HEADERS, GOOD_TO_BUY_HOST, HEADERS, HOST } from './contants'
+import { BUY_DIGITAL_HEADERS, BUY_DIGITAL_HOST, GOOD_TO_BUY_HEADERS, GOOD_TO_BUY_HOST, HEADERS, HOST } from './contants'
 
 const getHeadline = async () => {
   const res = await axios.get(HOST, {
@@ -42,7 +42,27 @@ const getGoodToBuy = async () => {
   }
 
   return result
-
 }
 
-export { getHeadline, getGoodToBuy }
+const getBuyDigital = async () => {
+  const res = await axios.get(BUY_DIGITAL_HOST, {
+    headers: BUY_DIGITAL_HEADERS
+  })
+
+  let result: IResponse = {}
+  if (res.status === 200) {
+    result.code = Code.success
+    result.data = res.data.data.find((i: any) => i.source_key === 'zhidemai')
+    result.message = 'success'
+  } else {
+    result = {
+      code: Code.error,
+      data: null,
+      message: 'fetch error'
+    }
+  }
+
+  return result
+}
+
+export { getHeadline, getGoodToBuy, getBuyDigital }

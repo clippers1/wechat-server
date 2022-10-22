@@ -1,4 +1,4 @@
-import { getGoodToBuy, getHeadline } from '@/services/promotion'
+import { getBuyDigital, getGoodToBuy, getHeadline } from '@/services/promotion'
 import express from 'express'
 const router = express.Router()
 
@@ -15,6 +15,16 @@ router.get('/coupon', async (req, res) => {
 
 router.get('/gotobuy', async (req, res) => {
   const result = await getGoodToBuy()
+  const { data, code, message } = result
+  res.send({
+    data,
+    code,
+    message
+  })
+})
+
+router.get('/buydigital', async (req, res) => {
+  const result = await getBuyDigital()
   const { data, code, message } = result
   res.send({
     data,
